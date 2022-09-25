@@ -1,0 +1,15 @@
+{
+  "tr-map": "Map",
+  "tr-table": "Table",
+  "tr-translate": "Translate",
+  "tr-table-title": "Pinned Locations",
+  "tr-text-search": "Full text search",
+  "tr-add-location": "Add location",
+  "tr-table-header-name": "Name",
+  "tr-table-header-lat": "Latitude",
+  "tr-table-header-long": "Longitude",
+  "tr-per-page": "items per page",
+  "tr-save": "Save",
+  "tr-en": "English",
+  "tr-fr": "French"
+}

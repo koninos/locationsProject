@@ -1,0 +1,5 @@
+@import '../../../assets/scss/variables.scss';
+
+agm-map {
+  height: calc(100vh - $navbarHeight);
+}

@@ -1,0 +1,15 @@
+{
+  "tr-map": "Carte",
+  "tr-table": "Table",
+  "tr-translate": "Traduire",
+  "tr-table-title":"Emplacements épinglés",
+  "tr-text-search": "Recherche en texte intégral",
+  "tr-add-location": "Ajouter un emplacement",
+  "tr-table-header-name": "Nom",
+  "tr-table-header-lat": "Latitude",
+  "tr-table-header-long": "Longitude",
+  "tr-per-page": "objets par page",
+  "tr-save": "Enregistrer",
+  "tr-en": "Anglais",
+  "tr-fr": "Français"
+}

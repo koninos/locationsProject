@@ -1,0 +1,31 @@
+<div class="table-responsive-sm">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col" sortable="name" (sort)="sortTable.emit($event)">{{ 'tr-table-header-name' | translate }}</th>
+        <th scope="col" sortable="latitude" (sort)="sortTable.emit($event)">{{ 'tr-table-header-lat' | translate }}</th>
+        <th scope="col" sortable="longitude" (sort)="sortTable.emit($event)">{{ 'tr-table-header-long' | translate }}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let location of locations; let idx = index">
+        <th scope="row">{{ idx + 1 }}</th>
+        <td>
+          <ngb-highlight [result]="location.name" [term]="filter.value"></ngb-highlight>
+        </td>
+        <td>
+          <ngb-highlight [result]="'' + location.coordinates.latitude" [term]="filter.value"></ngb-highlight>
+        </td>
+        <td>
+          <ngb-highlight [result]="'' + location.coordinates.longitude" [term]="filter.value"></ngb-highlight>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<app-pagination
+  [items]="initialLocations"
+  (refreshItems)="refreshLocations($event)">
+</app-pagination>

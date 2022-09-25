@@ -1,0 +1,18 @@
+<div class="d-flex justify-content-between p-2">
+  <ngb-pagination
+    [collectionSize]="collectionSize"
+    [(page)]="currentPage"
+    [pageSize]="pageSize"
+    (pageChange)="onRefreshItems()">
+  </ngb-pagination>
+
+  <select class="form-select" style="width: auto"
+    [(ngModel)]="pageSize"
+    (ngModelChange)="onRefreshItems()">
+
+    <option [ngValue]="5">5 {{ 'tr-per-page' | translate }}</option>
+    <option [ngValue]="10">10 {{ 'tr-per-page' | translate }}</option>
+    <option [ngValue]="25">25 {{ 'tr-per-page' | translate }}</option>
+    <option [ngValue]="100">100 {{ 'tr-per-page' | translate }}</option>
+  </select>
+</div>

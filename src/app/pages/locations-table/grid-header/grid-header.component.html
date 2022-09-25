@@ -1,0 +1,57 @@
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+  <h1 class="h2">
+    {{ 'tr-table-title' | translate }}
+  </h1>
+  <div class="btn-toolbar mb-2 mb-md-0">
+    <div class="btn-group me-2">
+        <label for="table-filtering-search" class="col-xs-3 col-sm-auto col-form-label">
+          {{ 'tr-text-search' | translate }}:
+        </label>
+        <div class="col-xs-3 col-sm-auto">
+          <input id="table-filtering-search" class="form-control" type="text" [formControl]="filterForm">
+        </div>
+    </div>
+    <div class="btn-group me-2">
+      <button type="button" class="btn btn-sm btn-outline-secondary"
+        (click)="addLocationModal(content)">
+        {{ 'tr-add-location' | translate }}
+      </button>
+    </div>
+  </div>
+</div>
+
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">{{ 'tr-add-location' | translate }}</h4>
+    <button type="button" class="btn-close" aria-label="Close"
+      (click)="modal.dismiss()">
+    </button>
+  </div>
+  <div class="modal-body">
+    <form [formGroup]="newLocationForm">
+      <div class="mb-3">
+        <div class="form-group">
+          <label for="location-name">{{ 'tr-table-header-name' | translate }}: </label>
+          <input id="location-name" class="form-control" type="text" formControlName="name">
+        </div>
+        <div formGroupName="coordinates">
+          <div class="form-group">
+            <label for="location-latitude">{{ 'tr-table-header-lat' | translate }}: </label>
+            <input id="location-latitude" class="form-control" type="text" formControlName="latitude">
+          </div>
+          <div class="form-group">
+            <label for="location-longitude">{{ 'tr-table-header-long' | translate }}: </label>
+            <input id="location-longitude" class="form-control" type="text" formControlName="longitude">
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark"
+      (click)="modal.close(); saveLocation($event)"
+      [disabled]="!newLocationForm.valid">
+      {{ 'tr-save' | translate }}
+    </button>
+  </div>
+</ng-template>

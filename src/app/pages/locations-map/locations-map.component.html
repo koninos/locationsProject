@@ -1,0 +1,11 @@
+<agm-map [latitude]="latitude" [longitude]="longitude">
+  <agm-marker *ngFor="let location of locations$ | async"
+    [latitude]="location.coordinates.latitude"
+    [longitude]="location.coordinates.longitude"
+    (markerClick)="oMarkerClick($event)">
+
+    <agm-info-window [disableAutoPan]="true">
+      {{ location.name }}
+    </agm-info-window>
+  </agm-marker>
+</agm-map>

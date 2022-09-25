@@ -1,0 +1,15 @@
+<div class="container-fluid">
+  <div class="row">
+    <main class="ms-sm-auto col-lg-12 px-md-4">
+      <app-grid-header
+        [filterForm]="filter">
+      </app-grid-header>
+
+      <app-grid
+        [locations]="locations$ | async"
+        [filter]="filter"
+        (sortTable)="sortSubject.next($event)">
+      </app-grid>
+    </main>
+  </div>
+</div>
